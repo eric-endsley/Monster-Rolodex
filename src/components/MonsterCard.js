@@ -42,6 +42,7 @@ export default function MonsterCard(props) {
             <Text style={cardStyles.ability}>CHA</Text>
             <Text style={cardStyles.abilityScore}>{monster.cha} ({Math.floor(((monster.cha - 10)/2))})</Text>
           </View>
+          <View style={cardStyles.redLine} />
         </View>
       </View>
     </View>
