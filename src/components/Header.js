@@ -4,8 +4,6 @@ import { StyleSheet } from 'react-native';
 
 
 export default function Header() {
-  const [press, setPress] = useState(false);
-
   const backPress = () => console.log ('Back button pressed')
   const searchPress = () => {
     setPress(!press);
