@@ -8,6 +8,9 @@ import { StyleSheet, ScrollView, View, Text } from 'react-native';
 export default function App() {
   const [fontsLoaded] = useFonts ({
     'Bookmania': require('./src/assets/fonts/Bookmania.otf'),
+    'BookmaniaItalic': require('./src/assets/fonts/BookmaniaItalic.otf'),
+    'BookmaniaBold': require('./src/assets/fonts/BookmaniaBold.otf'),
+    'BookmaniaBoldItalic': require('./src/assets/fonts/BookmaniaBoldItalic.otf'),
     'MrEavesSmallCaps': require('./src/assets/fonts/MrEavesSmallCaps.otf'),
     'ScalySans': require('./src/assets/fonts/ScalySans.otf')
   });
