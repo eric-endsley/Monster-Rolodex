@@ -11,30 +11,36 @@ export default function MonsterCard(props) {
         <Text style={cardStyles.name}>{monster.name}</Text>
         <Text style={cardStyles.subtitle}>{monster.size} {monster.type}, {monster.alignment}</Text>
         <View style={cardStyles.redLine} />
+        <Text style={cardStyles.redStats}>
+          <Text><Text style={cardStyles.bold}>Armor Class</Text> <Text>{monster.ac}</Text></Text>
+          <Text><Text style={cardStyles.bold}>Hit Points</Text> <Text>{monster.hp}</Text></Text>
+          <Text><Text style={cardStyles.bold}>Speed</Text> <Text>{monster.speed}</Text></Text>
+        </Text>
+        <View style={cardStyles.redLine} />
         <View style={cardStyles.abilities}>
           <View style={cardStyles.abilityBlock}>
             <Text style={cardStyles.ability}>STR</Text>
-            <Text style={cardStyles.abilityScore}>{monster.str}</Text>
+            <Text style={cardStyles.abilityScore}>{monster.str} ({Math.floor(((monster.str - 10)/2))})</Text>
           </View>
           <View style={cardStyles.abilityBlock}>
             <Text style={cardStyles.ability}>DEX</Text>
-            <Text style={cardStyles.abilityScore}>{monster.dex}</Text>
+            <Text style={cardStyles.abilityScore}>{monster.dex} ({Math.floor(((monster.dex - 10)/2))})</Text>
           </View>
           <View style={cardStyles.abilityBlock}>
             <Text style={cardStyles.ability}>CON</Text>
-            <Text style={cardStyles.abilityScore}>{monster.con}</Text>
+            <Text style={cardStyles.abilityScore}>{monster.con} ({Math.floor(((monster.con - 10)/2))})</Text>
           </View>
           <View style={cardStyles.abilityBlock}>
             <Text style={cardStyles.ability}>INT</Text>
-            <Text style={cardStyles.abilityScore}>{monster.int}</Text>
+            <Text style={cardStyles.abilityScore}>{monster.int} ({Math.floor(((monster.int - 10)/2))})</Text>
           </View>
           <View style={cardStyles.abilityBlock}>
             <Text style={cardStyles.ability}>WIS</Text>
-            <Text style={cardStyles.abilityScore}>{monster.wis}</Text>
+            <Text style={cardStyles.abilityScore}>{monster.wis} ({Math.floor(((monster.wis - 10)/2))})</Text>
           </View>
           <View style={cardStyles.abilityBlock}>
             <Text style={cardStyles.ability}>CHA</Text>
-            <Text style={cardStyles.abilityScore}>{monster.cha}</Text>
+            <Text style={cardStyles.abilityScore}>{monster.cha} ({Math.floor(((monster.cha - 10)/2))})</Text>
           </View>
         </View>
       </View>
@@ -72,13 +78,22 @@ const cardStyles = StyleSheet.create({
   subtitle: {
     fontFamily: 'BookmaniaItalic'
   },
+  redStats: {
+    color: '#922610',
+    fontFamily: 'Bookmania',
+  },
+  bold: {
+    fontFamily: 'BookmaniaBold'
+  },
+  block: {
+    flex: 1,
+  },
   abilities: {
     flex: 1,
     flexDirection: 'row'
   },
   abilityBlock: {
     flex: 1,
-    flexDirection: 'column'
   },
   ability: {
     color: '#922610',
@@ -89,6 +104,7 @@ const cardStyles = StyleSheet.create({
     color: '#922610',
     fontFamily: 'Bookmania',
     alignSelf: 'center',
-    marginTop: -5
+    marginTop: -5,
+    fontSize: 12,
   },
 });
